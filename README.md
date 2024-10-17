@@ -1,6 +1,6 @@
 # Lovecraft Test Framework 🐙
 
-A dark and eldritch test framework, powered by the ancient tomes of Mocha, Chai, and c8.
+A dark and eldritch test framework, powered by the ancient tomes of [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/), [Sinon](https://sinonjs.org/), and [c8](https://github.com/bcoe/c8#readme).
 
 ## Features
 
