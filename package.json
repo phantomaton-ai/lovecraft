@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "bin": "cli.js",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phantomaton-ai/lovecraft.git"
+  },
   "scripts": {
     "cov": "node cli.js -c",
     "test": "node cli.js"
