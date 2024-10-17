@@ -4,5 +4,10 @@ import lovecraft from './lovecraft.js';
 
 const [, , ...args] = process.argv;
 
-lovecraft(args.includes('-c') || args.includes('--coverage'));
+try {
+  lovecraft(args.includes('-c') || args.includes('--coverage'));  
+} catch (e) {
+  process.exit(e.code);
+}
+
 

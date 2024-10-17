@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "cov": "c8 -x '*.test.*' -r html --check-coverage --lines 100 npm test",
-    "test": "mocha --ignore 'node_modules/**/*' **/*.test.js"
+    "cov": "node cli.js -c",
+    "test": "node cli.js"
   },
   "keywords": [],
   "author": "",

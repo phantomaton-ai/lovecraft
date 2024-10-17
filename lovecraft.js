@@ -8,6 +8,6 @@ const BIN = path.join(__dirname, 'node_modules', '.bin');
 const MOCHA = `${path.join(BIN, 'mocha')} --ignore 'node_modules/**/*' **/*.test.js`;
 const C8 = `${path.join(BIN, 'c8')} -x '*.test.*' -r html --check-coverage --lines 100 ${MOCHA}`;
 
-const lovecraft = (coverage = false) => execSync(coverage ? C8 : MOCHA);
+const lovecraft = (coverage = false) => execSync(coverage ? C8 : MOCHA, { stdio: 'inherit' });
 
 export default lovecraft;
