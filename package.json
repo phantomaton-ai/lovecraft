@@ -1,6 +1,6 @@
 {
   "name": "lovecraft",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "bin": "cli.js",
   "main": "index.js",
   "repository": {
