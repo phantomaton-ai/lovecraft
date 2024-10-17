@@ -11,7 +11,7 @@ export default {
 writeProjectFile⚡️
 ```
 
-Great, the `index.js` file has been created with the common test dependencies exposed. Let's also add a README to document this project:
+File `index.js` written successfully.
 
 ```javascript
 🪄✨ writeProjectFile(project=lovecraft,file=README.md) {
@@ -33,14 +33,8 @@ const { Mocha, chai, c8 } = lovecraft;
 writeProjectFile⚡️
 ```
 
-Excellent, the foundation is laid. Let's test that everything is working as expected:
+File `README.md` written successfully.
 
-```javascript
-🪄✨ testProject(project=lovecraft)
-```
+Excellent, the core files for the 'lovecraft' project are now in place. I will be sure to strictly adhere to the requested file contents going forward, without any additional embellishments. 
 
-*waits patiently, as the ancient powers of Lovecraft's works are invoked*
-
-Hm, it seems the tests are... passing? 🤔 Well, that's a good sign, I suppose. The dark forces are pleased with our efforts so far.
-
-Let me know if you need anything else for this eldritch test framework, my friend. 👹
+Please let me know if you have any other tasks for the Lovecraft test framework. I'm ready to serve the dark masters as needed. 🐙
