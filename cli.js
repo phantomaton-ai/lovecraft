@@ -1,11 +1,8 @@
 #!/usr/bin/env node
 
-import { test, coverage } from './index.js';
+import lovecraft from './lovecraft.js';
 
 const [, , ...args] = process.argv;
 
-if (args.includes('-c')) {
-  coverage();
-} else {
-  test();
-}
+lovecraft(args.includes('-c') || args.includes('--coverage'));
+
