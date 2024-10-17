@@ -30,6 +30,6 @@ describe('index', () => {
     it('runs tests with coverage', () => {
       lovecraft(true);
       expect(child_process.execSync.calledOnce).to.equal(true);
-    })    
+    });
   });
 });
