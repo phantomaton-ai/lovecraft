@@ -1,6 +1,7 @@
 {
   "name": "lovecraft",
   "version": "1.0.0",
+  "bin": "cli.js",
   "main": "index.js",
   "scripts": {
     "cov": "node cli.js -c",
