@@ -2,7 +2,7 @@ import * as chai from 'chai';
 import child_process from 'child_process';
 import sinon from 'sinon';
 
-import lovecraft, { expect } from './index.js';
+import lovecraft, { expect, stub } from './index.js';
 
 describe('index', () => {
   beforeEach(() => {
@@ -15,6 +15,10 @@ describe('index', () => {
   
   it('exports chai.expect', () => {
     chai.expect(expect).to.equal(chai.expect);
+  });
+  
+  it('exports sinon.stub', () => {
+    chai.expect(stub).to.equal(sinon.stub);
   });
 
   describe('lovecraft', () => {
