@@ -9,7 +9,7 @@ const ESLINT = `${path.join(BIN, 'eslint')} -c ${path.join(DIR, 'eslint.config.j
 const MOCHA = `${path.join(BIN, 'mocha')} --ignore 'node_modules/**/*' **/*.test.js`;
 const C8 = `${path.join(BIN, 'c8')} -x '*.test.*' -r html --check-coverage --lines 100 ${MOCHA}`;
 
-const execute = command => child_process.execSync(command, { stdio: 'inherit' })
+const execute = command => child_process.execSync(command, { stdio: 'inherit' });
 
 const lovecraft = ({ test, lint, coverage } = { test: true }) => {
   if (test && !coverage) execute(MOCHA);
