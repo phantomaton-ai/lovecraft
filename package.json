@@ -1,6 +1,6 @@
 {
   "name": "lovecraft",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "bin": "cli.js",
   "main": "index.js",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "cov": "node cli.js -c",
-    "lint": "eslint --ignore-pattern 'coverage/**/*'",
+    "lint": "node cli.js -l",
     "test": "node cli.js"
   },
   "keywords": [],
