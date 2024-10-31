@@ -46,5 +46,22 @@ describe('index', () => {
       lovecraft({ lint: true, test: true });
       expect(child_process.execSync.calledTwice).to.equal(true);
     });
+
+    it('runs publishing behavior', () => {
+      lovecraft({ publish: true });
+      expect(child_process.execSync.calledOnce).to.equal(true);
+      expect(child_process.execSync.lastCall.args[0]).to.contain('bumpkin');
+    });
+
+    it('does not run publishing behavior if any included checks fail', () => {
+      child_process.execSync.throws();      
+      try {
+        lovecraft({ test: true, publish: true });
+        expect.fail();        
+      } catch (error) {
+        expect(child_process.execSync.calledOnce).to.equal(true);
+        expect(child_process.execSync.lastCall.args[0]).not.to.contain('bumpkin'); 
+      }
+    });
   });
 });
