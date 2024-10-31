@@ -3,6 +3,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import bumpkin from 'bumpkin';
 
+import options from './options.js';
+
 const FILE = fileURLToPath(import.meta.url);
 const DIR = path.dirname(FILE);
 const BIN = path.join('node_modules', '.bin');
@@ -13,7 +15,7 @@ const BUMPKIN = `${path.join(BIN, 'bumpkin')}`;
 
 const execute = command => child_process.execSync(command, { stdio: 'inherit' });
 
-const lovecraft = ({ test = true, lint = false, coverage = false, publish = false }) => {
+const lovecraft = ({ test, lint, coverage, publish } = options()) => {
   if (test && !coverage) execute(MOCHA);
   if (coverage) execute(C8);
   if (lint) execute(ESLINT);
