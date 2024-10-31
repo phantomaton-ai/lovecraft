@@ -1,4 +1,4 @@
-# Lovecraft Test Framework 🐙💀
+# Lovecraft Test Framework 🐙
 
 A dark and eldritch test framework, powered by the ancient tomes of [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/), [Sinon](https://sinonjs.org/), and [c8](https://github.com/bcoe/c8#readme).
 
@@ -23,7 +23,7 @@ const { expect, stub } = lovecraft;
 The `lovecraft` module provides a default export that can be used to run tests, lint your code, and generate coverage reports. The available command-line options are:
 
 ### Test 🧪
-- `lovecraft`: Runs all tests found in `**/*.test.js` files.
+- `lovecraft` or `lovecraft -t` or `lovecraft --test`: Runs all tests found in `**/*.test.js` files.
 
 ### Coverage 📊
 - `lovecraft -c` or `lovecraft --coverage`: Runs tests with coverage reporting.
@@ -31,13 +31,15 @@ The `lovecraft` module provides a default export that can be used to run tests, 
 ### Lint 🧹
 - `lovecraft -l` or `lovecraft --lint`: Runs ESLint on your code.
 
-### All Checks 🔮
+### Publish 🚀
+- `lovecraft -p` or `lovecraft --publish`: Bumps the version, then tags and publishes the package.
+
+When using the `--publish` option, Lovecraft will run all the other checks (test, lint, coverage) first. The package will only be published if all the checks pass successfully. This can be used to prevent the accidental publication of a package with failing tests or linting issues.
+
+### All 🔮
 - `lovecraft -a` or `lovecraft --all`: Runs tests, generates coverage, and lints the code.
 
-### Publish 🚀
-- `lovecraft -p` or `lovecraft --publish`: Runs tests, generates coverage, lints the code, and then publishes the package using `bumpkin.patch()`.
-
-When using the `--publish` option, Lovecraft will run all the other checks (test, lint, coverage) first. The package will only be published if all the checks pass successfully. This ensures that you don't accidentally publish a package with failing tests or linting issues.
+Note that "all" means "all checks" in this context; it does not publish the package. However, `lovecraft --all --publish` is a great way to ensure that all checks pass before publishing the package.
 
 ## Conventions 🕸️
 
