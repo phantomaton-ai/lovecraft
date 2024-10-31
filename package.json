@@ -18,7 +18,7 @@
   "description": "",
   "type": "module",
   "dependencies": {
-    "bumpkin": "^1.0.0",
+    "bumpkin": "^1.0.1",
     "c8": "^10.1.2",
     "chai": "^5.1.1",
     "eslint": "^9.12.0",
