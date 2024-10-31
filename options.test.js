@@ -3,8 +3,7 @@ import options from './options.js';
 
 describe('options', () => {
   it('sets the test option when no arguments are provided', () => {
-    const expected = { test: true };
-    expect(options()).to.deep.equal(expected);
+    expect(options()).to.deep.equal({ test: true });
   });
 
   it('sets the test option when -t or --test is provided', () => {
@@ -32,18 +31,21 @@ describe('options', () => {
   });
 
   it('enables all checks when -a or --all is provided', () => {
-    const expected = { test: true, lint: true, coverage: true, publish: false };
+    const expected = { test: true, lint: true, coverage: true };
     expect(options(['-a'])).to.deep.equal(expected);
     expect(options(['--all'])).to.deep.equal(expected);
   });
 
-  it('sets multiple options when multiple flags are provided', () => {
-    const expected = { test: true, lint: true, coverage: true, publish: true };
-    expect(options(['-t', '-l', '-c', '-p'])).to.deep.equal(expected);
+  it('sets multiple options when multiplef flags are provided', () => {
+    expect(options(['-t', '-p'])).to.deep.equal({ test: true, publish: true });
+    expect(options(['-c', '-p'])).to.deep.equal({ coverage: true, publish: true });
+    expect(options(['-c', '-l'])).to.deep.equal({ lint: true, coverage: true });
+    expect(options(['-t', '-l', '-p'])).to.deep.equal({ test: true, lint: true, publish: true });
   });
 
-  it('sets the correct default values when no arguments are provided', () => {
-    const expected = { test: true, lint: false, coverage: false, publish: false };
-    expect(options()).to.deep.equal(expected);
+  it('sets the full set of options when the full set of flags are provided', () => {
+    const expected = { test: true, lint: true, coverage: true, publish: true };
+    expect(options(['-t', '-l', '-c', '-p'])).to.deep.equal(expected);
+    expect(options(['-a', '-p'])).to.deep.equal(expected);
   });
 });

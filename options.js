@@ -10,5 +10,7 @@ export default (args = []) =>
   args.length === 0 ? { test: true } :
   Object.keys(flags).reduce((options, flag) => ({
     ...options,
-    [flag]: flags[flag].some(arg => args.includes(arg))
+    ...(flags[flag].some(arg => args.includes(arg)) ? {
+      [flag]: true      
+    }: {})
   }), {});
