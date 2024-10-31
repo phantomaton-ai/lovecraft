@@ -1,6 +1,7 @@
 import child_process from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import bumpkin from 'bumpkin';
 
 const FILE = fileURLToPath(import.meta.url);
 const DIR = path.dirname(FILE);
@@ -11,10 +12,15 @@ const C8 = `${path.join(BIN, 'c8')} -x '*.test.*' -r html --check-coverage --lin
 
 const execute = command => child_process.execSync(command, { stdio: 'inherit' });
 
-const lovecraft = ({ test, lint, coverage } = { test: true }) => {
+const lovecraft = ({ test = true, lint = false, coverage = false, publish = false }) => {
   if (test && !coverage) execute(MOCHA);
   if (coverage) execute(C8);
   if (lint) execute(ESLINT);
+
+  if (publish) {
+    const newVersion = bumpkin.patch();
+    console.log(`Published new version: ${newVersion}`);
+  }
 };
 
 export default lovecraft;
