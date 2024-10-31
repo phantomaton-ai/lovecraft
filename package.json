@@ -10,6 +10,7 @@
   "scripts": {
     "cov": "node cli.js -c",
     "lint": "node cli.js -l",
+    "pub": "node cli.js -a -p",
     "test": "node cli.js"
   },
   "keywords": [],
