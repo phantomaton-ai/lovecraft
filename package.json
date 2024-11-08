@@ -10,6 +10,8 @@
   "scripts": {
     "cov": "node cli.js -c",
     "lint": "node cli.js -l",
+    "maj": "node cli.js -a -p major",
+    "min": "node cli.js -a -p minor",
     "pub": "node cli.js -a -p",
     "test": "node cli.js"
   },
