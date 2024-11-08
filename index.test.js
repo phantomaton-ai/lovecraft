@@ -53,6 +53,18 @@ describe('index', () => {
       expect(child_process.execSync.lastCall.args[0]).to.contain('bumpkin');
     });
 
+    it('runs publishing behavior with major versions', () => {
+      lovecraft({ publish: 'major' });
+      expect(child_process.execSync.calledOnce).to.equal(true);
+      expect(child_process.execSync.lastCall.args[0]).to.contain('bumpkin major');
+    });
+
+    it('runs publishing behavior with minor versions', () => {
+      lovecraft({ publish: 'minor' });
+      expect(child_process.execSync.calledOnce).to.equal(true);
+      expect(child_process.execSync.lastCall.args[0]).to.contain('bumpkin minor');
+    });
+
     it('does not run publishing behavior if any included checks fail', () => {
       child_process.execSync.throws();      
       try {
