@@ -30,6 +30,18 @@ describe('options', () => {
     expect(options(['--publish'])).to.deep.equal(expected);
   });
 
+  it('supports a major publish option when -p or --publish is provided', () => {
+    const expected = { publish: 'major' };
+    expect(options(['-p', 'major'])).to.deep.equal(expected);
+    expect(options(['--publish', 'major'])).to.deep.equal(expected);
+  });
+
+  it('supports a minor publish option when -p or --publish is provided', () => {
+    const expected = { publish: 'minor' };
+    expect(options(['-p', 'minor'])).to.deep.equal(expected);
+    expect(options(['--publish', 'minor'])).to.deep.equal(expected);
+  });
+
   it('enables all checks when -a or --all is provided', () => {
     const expected = { test: true, lint: true, coverage: true };
     expect(options(['-a'])).to.deep.equal(expected);
