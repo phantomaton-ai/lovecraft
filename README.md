@@ -33,6 +33,8 @@ The `lovecraft` module provides a default export that can be used to run tests, 
 
 ### Publish 🚀
 - `lovecraft -p` or `lovecraft --publish`: Bumps the version, then tags and publishes the package.
+- `lovecraft -p minor` or `lovecraft --publish minor`: As above, but increments the minor version.
+- `lovecraft -p major` or `lovecraft --publish major`: As above, but increments the major version.
 
 When using the `--publish` option, Lovecraft will run all the other checks (test, lint, coverage) first. The package will only be published if all the checks pass successfully. This can be used to prevent the accidental publication of a package with failing tests or linting issues.
 
