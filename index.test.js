@@ -21,6 +21,12 @@ describe('index', () => {
     chai.expect(stub).to.equal(sinon.stub);
   });
 
+  describe('expect', () => {
+    it('handles promise rejection', () => {
+      expect(Promise.reject('foo')).rejectedWith('foo');
+    });
+  });
+
   describe('lovecraft', () => {
     it('runs tests', () => {
       lovecraft();
