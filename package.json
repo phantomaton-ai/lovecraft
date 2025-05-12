@@ -20,7 +20,7 @@
   "license": "MIT",
   "description": "",
   "type": "module",
-  "dependencies": {
+  "peerDependencies": {
     "bumpkin": "^1.0.1",
     "c8": "^10.1.2",
     "chai": "^5.1.1",
