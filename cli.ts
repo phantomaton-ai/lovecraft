@@ -7,6 +7,6 @@ const [, , ...args] = process.argv;
 
 try {
   lovecraft(options(args));
-} catch (e) {
+} catch (e: any) {
   process.exit(e.code);
 }

@@ -1,19 +1,20 @@
 {
   "name": "lovecraft",
-  "version": "1.1.4",
-  "bin": "cli.js",
-  "main": "index.js",
+  "version": "2.0.0",
+  "bin": "dist/cli.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/phantomaton-ai/lovecraft.git"
   },
   "scripts": {
-    "cov": "node cli.js -c",
-    "lint": "node cli.js -l",
-    "maj": "node cli.js -a -p major",
-    "min": "node cli.js -a -p minor",
-    "pub": "node cli.js -a -p",
-    "test": "node cli.js"
+    "build": "tsc",
+    "cov": "npm run build && node dist/cli.js -c",
+    "lint": "npm run build && node dist/cli.js -l",
+    "maj": "npm run build && node dist/cli.js -a -p major",
+    "min": "npm run build && node dist/cli.js -a -p minor",
+    "pub": "npm run build && node dist/cli.js -a -p",
+    "test": "npm run build && mocha dist/**/*.test.js"
   },
   "keywords": [],
   "author": "",
@@ -21,12 +22,22 @@
   "description": "",
   "type": "module",
   "peerDependencies": {
+    "@types/chai": "^4.3.16",
+    "@types/chai-as-promised": "^7.1.8",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.14.12",
+    "@types/sinon": "^17.0.3",
     "bumpkin": "^1.0.1",
     "c8": "^10.1.2",
     "chai": "^5.1.1",
     "chai-as-promised": "^8.0.1",
     "eslint": "^9.12.0",
     "mocha": "^10.7.3",
-    "sinon": "^19.0.2"
+    "sinon": "^19.0.2",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0"
   }
 }
