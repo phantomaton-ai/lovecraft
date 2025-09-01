@@ -1,6 +1,6 @@
 {
   "name": "lovecraft",
-  "version": "2.0.0",
+  "version": "2.0.0-rc0",
   "bin": "dist/cli.js",
   "main": "dist/index.js",
   "repository": {
@@ -14,7 +14,7 @@
     "maj": "npm run build && node dist/cli.js -a -p major",
     "min": "npm run build && node dist/cli.js -a -p minor",
     "pub": "npm run build && node dist/cli.js -a -p",
-    "test": "npm run build && mocha dist/**/*.test.js"
+    "test": "npm run build && node dist/cli.js -t"
   },
   "keywords": [],
   "author": "",

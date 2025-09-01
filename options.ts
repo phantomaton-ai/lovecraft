@@ -1,4 +1,4 @@
-type Flag = 'test' | 'lint' | 'coverage' | 'publish';
+type Flag = 'test' | 'lint' | 'coverage' | 'publish' | 'build';
 
 const all: string[] = ['-a', '--all'];
 const flags: Record<Flag, string[]> = {
@@ -6,6 +6,7 @@ const flags: Record<Flag, string[]> = {
   lint: ['-l', '--lint', ...all],
   coverage: ['-c', '--coverage', ...all],
   publish: ['-p', '--publish'],
+  build: ['-b', '--build'],
 };
 
 const value = (flag: Flag, next: string): boolean | string =>
